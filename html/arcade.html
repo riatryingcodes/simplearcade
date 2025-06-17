@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Arcade Retro</title>
+    <link rel="stylesheet" href="../css/arcade.css">
+</head>
+<body>
+<script>
+    function cargarJuego(juego) {
+        const iframe = document.getElementById('iframeJuego');
+        const contenedor = document.getElementById('juegoSeleccionado');
+        const juegos = document.querySelector('.juegos');
+
+        iframe.src = `../juegos/${juego}`;
+        contenedor.style.display = 'flex';
+        juegos.classList.add('modo-juego');
+    }
+</script>
+
+    <h1>ARCADE RETRO</h1>
+    <p class="textos">Nuestra niñez como la recordamos pero más barata porque apenas estoy aprendiendo</p>
+
+     <div class="juego-seleccionado" id="juegoSeleccionado" style="display: none;">
+    <iframe id="iframeJuego" frameborder="0"></iframe>
+</div>
+
+<div class="juegos">
+    <div class="juego" onclick="cargarJuego('pacman/index.html')">
+        <p>Pac-Man</p>
+        <img src="../css/pacman.png">
+    </div>
+    <div class="juego" onclick="cargarJuego('snake/index.html')">
+        <p>Snake</p>
+        <img src="../css/snake.png">
+    </div>
+    <div class="juego" onclick="cargarJuego('tetris/index.html')">
+        <p>Tetris</p>
+        <img src="../css/tetris.png">
+    </div>
+    <div class="juego" onclick="cargarJuego('chess/index.html')">
+        <p>Ajedrez</p>
+        <img src="../css/chess.png">
+    </div>
+    <div class="juego" onclick="cargarJuego('mariobros/index.html')">
+        <p>Mario Bros</p>
+        <img src="../css/mariobros.png">
+    </div>
+    <div class="juego" onclick="cargarJuego('dino/chromeDinoGame.html')">
+        <p>Dinosaur Chrome</p>
+        <img src="../css/dino.png.png">
+    </div>
+</div>
+
+    <br> <br> <br>
+    <p class="textos">Creada por Valeria González</p>
+
+</body>
+</html>

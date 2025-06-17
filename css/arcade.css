@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'ArcadeFont';
+    src: url('../css/PressStart2P-Regular.ttf') format('truetype');
+}
+
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-family: 'ArcadeFont', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 90px;
+}
+
+p {
+    text-align: center;
+    font-family: 'ArcadeFont', sans-serif;
+    font-size: 19px;
+}
+
+.juegos {
+    display: grid;
+    grid-template-columns: repeat(3, 140px); 
+    grid-template-rows: repeat(2, auto);    
+    justify-content: center; 
+    justify-items: center;
+    gap: 50px 250px;          
+    margin: 40px 70px 40px 70px;
+}
+.juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    
+}
+
+.juego p {
+    text-align: center;
+    margin-top: 8px;
+    color: white;
+    font-family: 'ArcadeFont', sans-serif;
+    font-size: 16px;
+}
+
+.juego img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    border: 3px solid cyan;
+    animation: glow 3s linear infinite;
+    transition: transform 0.2s;
+}
+
+.juego img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px red;
+        border-color: red;
+    }
+    20% {
+        box-shadow: 0 0 15px orange;
+        border-color: orange;
+    }
+    40% {
+        box-shadow: 0 0 15px yellow;
+        border-color: yellow;
+    }
+    60% {
+        box-shadow: 0 0 15px lime;
+        border-color: lime;
+    }
+    80% {
+        box-shadow: 0 0 15px cyan;
+        border-color: cyan;
+    }
+    100% {
+        box-shadow: 0 0 15px magenta;
+        border-color: magenta;
+    }
+}
+
+.juego-seleccionado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+iframe {
+    width: 1000px;
+    height: 562px; /* 16:9 aspect ratio */
+    border: 5px solid #00ffff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00ffff;
+}
+
+.juegos.modo-juego {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.juegos.modo-juego .juego img {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    border: 2px solid cyan;
+    animation: glow 3s linear infinite;
+}
+
+
+.textos {
+    color: white;
+    font-family: 'ArcadeFont', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
