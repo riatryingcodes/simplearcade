@@ -6,6 +6,21 @@
     <link rel="stylesheet" href="../css/arcade.css">
 </head>
 <body>
+
+  <nav class="barra-menu">
+    <a href="arcade.html">INICIO</a>
+    <a href="nosotros.html">NOSOTROS</a>
+    <a href="usuario.html">USUARIO</a>
+    <a href="productos.html">PRODUCTOS</a>
+</nav>
+
+    <div class="popup" id="popupBienvenida">
+    <div class="popup-contenido">
+        <p> BIENVENIDO, DISFRUTA DE NUESTROS JUEGOS </p>
+        <button onclick="document.getElementById('popupBienvenida').style.display='none'">Cerrar</button>
+    </div>
+</div>
+
 <script>
     function cargarJuego(juego) {
         const iframe = document.getElementById('iframeJuego');
@@ -18,42 +33,62 @@
     }
 </script>
 
-    <h1>ARCADE RETRO</h1>
-    <p class="textos">Nuestra niñez como la recordamos pero más barata porque apenas estoy aprendiendo</p>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const imagenesFlyer = [
+      "../css/flyer1.jpg",
+      "../css/flyer2.jpg",
+      "../css/flyer3.jpg"
+    ];
 
-     <div class="juego-seleccionado" id="juegoSeleccionado" style="display: none;">
+    let index = 0;
+    const flyer = document.getElementById('flyerCarrusel');
+
+    setInterval(() => {
+      index = (index + 1) % imagenesFlyer.length;
+      flyer.style.opacity = 0;
+      setTimeout(() => {
+        flyer.src = imagenesFlyer[index];
+        flyer.style.opacity = 1;
+      }, 300);
+    }, 4000);
+  });
+</script>
+
+
+<marquee behavior="scroll" direction="left" class="marquesina"> PRESIONA UN JUEGO PARA EMPEZAR </marquee>
+
+<img src="../css/star.gif" class="imagen-flotante" alt="estrella flotante">
+
+
+<div class="titulo-con-joystick">
+    <h1>ARCADE RETRO</h1>
+    <img src="../css/joystick.gif" alt="joystick" class="joystick-img">
+</div>
+
+<img src="../css/publicidad1.jpeg" alt="Publicidad Izquierda" class="publicidad izquierda">
+<img src="../css/publicidad2.jpeg" alt="Publicidad Derecha" class="publicidad derecha">
+
+<div class="carrusel-publicidad">
+  <a href="https://example.com" target="_blank">
+    <img src="../css/flyer1.jpg" class="flyer-carrusel" id="flyerCarrusel" alt="Publicidad 1">
+  </a>
+</div>
+
+
+<div class="juego-seleccionado" id="juegoSeleccionado" style="display: none;">
     <iframe id="iframeJuego" frameborder="0"></iframe>
 </div>
 
 <div class="juegos">
-    <div class="juego" onclick="cargarJuego('pacman/index.html')">
-        <p>Pac-Man</p>
-        <img src="../css/pacman.png">
-    </div>
-    <div class="juego" onclick="cargarJuego('snake/index.html')">
-        <p>Snake</p>
-        <img src="../css/snake.png">
-    </div>
-    <div class="juego" onclick="cargarJuego('tetris/index.html')">
-        <p>Tetris</p>
-        <img src="../css/tetris.png">
-    </div>
-    <div class="juego" onclick="cargarJuego('chess/index.html')">
-        <p>Ajedrez</p>
-        <img src="../css/chess.png">
-    </div>
-    <div class="juego" onclick="cargarJuego('mariobros/index.html')">
-        <p>Mario Bros</p>
-        <img src="../css/mariobros.png">
-    </div>
-    <div class="juego" onclick="cargarJuego('dino/chromeDinoGame.html')">
-        <p>Dinosaur Chrome</p>
-        <img src="../css/dino.png.png">
-    </div>
+    <div class="juego" onclick="cargarJuego('pacman/index.html')"><p>Pac-Man</p><img src="../css/pacman.png"></div>
+    <div class="juego" onclick="cargarJuego('snake/index.html')"><p>Snake</p><img src="../css/snake.png"></div>
+    <div class="juego" onclick="cargarJuego('tetris/index.html')"><p>Tetris</p><img src="../css/tetris.png"></div>
+    <div class="juego" onclick="cargarJuego('chess/index.html')"><p>Ajedrez</p><img src="../css/chess.png"></div>
+    <div class="juego" onclick="cargarJuego('mariobros/index.html')"><p>Mario Bros</p><img src="../css/mariobros.png"></div>
+    <div class="juego" onclick="cargarJuego('dino/chromeDinoGame.html')"><p>Dinosaur Chrome</p><img src="../css/dino.png.png"></div>
 </div>
 
-    <br> <br> <br>
-    <p class="textos">Creada por Valeria González</p>
 
 </body>
 </html>
